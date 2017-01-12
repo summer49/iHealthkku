@@ -17,7 +17,6 @@ public class login extends AppCompatActivity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-
         my_btn = (Button) findViewById(R.id.btn_ok);
         my_btn.setOnClickListener(this);
 

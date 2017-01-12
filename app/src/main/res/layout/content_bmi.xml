@@ -79,4 +79,22 @@
         android:layout_alignBottom="@+id/edit_height"
         android:layout_toRightOf="@+id/edit_height"
         android:layout_toEndOf="@+id/edit_height" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="39dp"
+        android:id="@+id/textView38"
+        android:textSize="28sp"
+        android:layout_below="@+id/button6"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="27dp"
+        android:id="@+id/textView40"
+        android:textSize="24sp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
