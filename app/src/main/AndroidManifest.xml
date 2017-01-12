@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.pumpim.ihealthkku">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".login">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Profile"
+            android:label="@string/title_activity_profile"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Nagic"
+            android:label="@string/title_activity_nagic"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Pressure"
+            android:label="@string/title_activity_pressure"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".sugar"
+            android:label="@string/title_activity_sugar"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".lipid"
+            android:label="@string/title_activity_lipid"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".BMI"
+            android:label="@string/title_activity_bmi"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Time"
+            android:label="@string/title_activity_time"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Date"
+            android:label="@string/title_activity_date"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Register"
+            android:label="@string/title_activity_register"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".forgetpassw"
+            android:label="@string/title_activity_forgetpassw"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".datepress"
+            android:label="@string/title_activity_datepress"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Datelipid"
+            android:label="@string/title_activity_datelipid"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".timelipid"
+            android:label="@string/title_activity_timelipid"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".datesugar"
+            android:label="@string/title_activity_datesugar"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".timesugar"
+            android:label="@string/title_activity_timesugar"
+            android:theme="@style/AppTheme.NoActionBar" />
+    </application>
+
+</manifest>
