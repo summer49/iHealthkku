@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.content.Intent;
 import java.text.DecimalFormat;
@@ -22,6 +23,7 @@ public class BMI extends AppCompatActivity  {
     TextView tvBMI;
     TextView bmiStatus;
     String resulttext;
+    ImageView A, B, C, D;
 
     double bmi = 0;
     double weight = 0;
@@ -41,10 +43,25 @@ public class BMI extends AppCompatActivity  {
         weightIn = (EditText) findViewById(R.id.edit_weigth);
         heigthIn = (EditText) findViewById(R.id.edit_height);
         btn_ok = (Button) findViewById(R.id.button6);
-        tvBMI = (TextView) findViewById(R.id.textView38);
-        bmiStatus = (TextView)findViewById( R.id.textView40 );
+        tvBMI = (TextView) findViewById(R.id.textView41);
+        bmiStatus = (TextView) findViewById( R.id.textView38 );
 
-        tvBMI.setOnClickListener(new Button.OnClickListener(){
+
+
+
+
+        A = (ImageView) findViewById( R.id.imageView6 );
+        B = (ImageView) findViewById( R.id.imageView7 );
+        C = (ImageView) findViewById( R.id.imageView9 );
+        D = (ImageView) findViewById( R.id.imageView10 );
+        A.setVisibility(View.INVISIBLE);
+        B.setVisibility(View.INVISIBLE);
+        C.setVisibility(View.INVISIBLE);
+        D.setVisibility(View.INVISIBLE);
+
+
+
+        btn_ok.setOnClickListener(new Button.OnClickListener(){
             public void onClick (View v){
                 calculateBMI();
             }
@@ -54,34 +71,54 @@ public class BMI extends AppCompatActivity  {
 
     public void calculateBMI() {
 
-        weight = Double.parseDouble(weightIn.getText().toString() );
-        heigth = Double.parseDouble(heigthIn.getText().toString() );
-        double valueheightmeters;
-        valueheightmeters = heigth / 100;
+        weight = Double.parseDouble(weightIn.getText().toString());
+        heigth = Double.parseDouble(heigthIn.getText().toString());
 
-        bmi = (weight / ((valueheightmeters*valueheightmeters)));
-        Log.d("BMI", resulttext);
-        tvBMI.setText(resulttext, TextView.BufferType.NORMAL);
+        double valueheightmeters = heigth / 100;
+        Log.d("dax", "dax" + String.valueOf(valueheightmeters));
 
-        if (bmi >= 35) {
-            resulttext =  Double.toString(bmi) + "Gravely overweight";
+        bmi = weight / (valueheightmeters * valueheightmeters);
 
-        } else if (bmi >= 29.0 && bmi < 35.0) {
-            resulttext = Double.toString(bmi) + "Seriously overweight";
+        if (bmi >= 29.0 ) {
+            resulttext = Double.toString(bmi) ;
+            bmiStatus.setText("Seriously overweight");
+            D.setVisibility(View.VISIBLE);
+            A.setVisibility(View.INVISIBLE);
+            B.setVisibility(View.INVISIBLE);
+            C.setVisibility(View.INVISIBLE);
 
-        } else if (bmi >= 24.0 && bmi < 29.0) {
-            resulttext = Double.toString(bmi) + "Overweight";
 
-        } else if ( bmi >= 18.0 && bmi < 24.0 ) {
-            resulttext = Double.toString(bmi) + "Normal Weight";
+        } else if (bmi >= 22.0 && bmi < 29.0) {
+            resulttext = Double.toString(bmi) ;
+            bmiStatus.setText("Overweight");
+            C.setVisibility(View.VISIBLE);
+            A.setVisibility(View.INVISIBLE);
+            B.setVisibility(View.INVISIBLE);
+            D.setVisibility(View.INVISIBLE);
 
-        } else if (bmi >= 16.0 && bmi < 18.0) {
-            resulttext = Double.toString(bmi) + "Underweight";
+
+        } else if ( bmi >= 18.0 && bmi < 22.0 ) {
+            resulttext = Double.toString(bmi) ;
+            bmiStatus.setText("Normal Weight");
+            B.setVisibility(View.VISIBLE);
+            A.setVisibility(View.INVISIBLE);
+            C.setVisibility(View.INVISIBLE);
+            D.setVisibility(View.INVISIBLE);
 
         } else {
-            resulttext = Double.toString(bmi) + "Seriously Underweight";
+            resulttext = Double.toString(bmi) ;
+            bmiStatus.setText("Underweight");
+            A.setVisibility(View.VISIBLE);
+            B.setVisibility(View.INVISIBLE);
+            C.setVisibility(View.INVISIBLE);
+            D.setVisibility(View.INVISIBLE);
 
         }
+
+        String resulttext = String.format( "%.2f", bmi );
+        tvBMI.setText(resulttext);
+        Log.d("finbmi", "bmi: " + resulttext);
+
 
     }
 
