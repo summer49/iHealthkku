@@ -44,7 +44,7 @@ public class BMI extends AppCompatActivity  {
         tvBMI = (TextView) findViewById(R.id.textView38);
         bmiStatus = (TextView)findViewById( R.id.textView40 );
 
-        btn_ok.setOnClickListener(new Button.OnClickListener(){
+        tvBMI.setOnClickListener(new Button.OnClickListener(){
             public void onClick (View v){
                 calculateBMI();
             }
@@ -53,7 +53,7 @@ public class BMI extends AppCompatActivity  {
 
 
     public void calculateBMI() {
-        String status;
+
         weight = Double.parseDouble(weightIn.getText().toString() );
         heigth = Double.parseDouble(heigthIn.getText().toString() );
         double valueheightmeters;
@@ -64,7 +64,7 @@ public class BMI extends AppCompatActivity  {
         tvBMI.setText(resulttext, TextView.BufferType.NORMAL);
 
         if (bmi >= 35) {
-            status = getString( R.string.Gravely overweight );
+            resulttext =  Double.toString(bmi) + "Gravely overweight";
 
         } else if (bmi >= 29.0 && bmi < 35.0) {
             resulttext = Double.toString(bmi) + "Seriously overweight";
@@ -82,8 +82,6 @@ public class BMI extends AppCompatActivity  {
             resulttext = Double.toString(bmi) + "Seriously Underweight";
 
         }
-
-        bmiStatus.setText( status );
 
     }
 
